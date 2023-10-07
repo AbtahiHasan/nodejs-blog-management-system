@@ -1,6 +1,16 @@
-<% include("./layout/header.ejs") %>
+<%- include("./layout/header.ejs") %>
 
-    <div>
-        <h2 class="text-white">hello</h2>
-    </div>
-    <% include("./layout/footer.ejs") %>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div>
+            <input type="text" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </form>
+    <%- include("./layout/footer.ejs") %>
