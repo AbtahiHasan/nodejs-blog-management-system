@@ -27,6 +27,20 @@ const userIsLoginedIn = (req, res, next) => {
     }
 }
 
+
+const isLogedIn = (req, res, next) => {
+    try {
+        if (req?.cookies?.user?.email) {
+            next()
+        }
+        else {
+            res.redirect("/login")
+        }
+    } catch (error) {
+
+    }
+}
+
 const isLogout = (req, res, next) => {
     try {
         if (!req?.cookies?.user) {
@@ -45,5 +59,6 @@ const isLogout = (req, res, next) => {
 module.exports = {
     adminIsLoginedIn,
     userIsLoginedIn,
+    isLogedIn,
     isLogout
 }

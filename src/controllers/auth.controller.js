@@ -65,8 +65,19 @@ const loadDashboard = (req, res) => {
     }
 }
 
+
+const logout = (req, res) => {
+    try {
+        res.clearCookie("user")
+        res.redirect("/login")
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
 module.exports = {
     loadLogin,
     login,
-    loadDashboard
+    loadDashboard,
+    logout
 }
