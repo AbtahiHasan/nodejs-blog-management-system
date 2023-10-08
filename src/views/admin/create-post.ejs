@@ -1,0 +1,42 @@
+<%- include("../layout/admin-header.ejs") %>
+    <link rel="stylesheet" href="/scripts/ckeditor/sample/css/sample.css">
+
+    <form class="container flex justify-center items-center h-full" action="" method="post"
+        enctype="multipart/form-data">
+        <div class="w-80 mx-auto flex gap-3 flex-col items-center p-4 rounded">
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Title <span class="danger">*</span></span>
+                <input type="text" name="title" required class="outline-none p-2 border rounded" placeholder="Title"
+                    aria-label="Title">
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Slug <span class="danger">*</span></span>
+                <input type="text" name="slug" required class="outline-none p-2 border rounded" placeholder="slug"
+                    aria-label="slug">
+            </div>
+
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Content<span class="danger">*</span></span>
+                <textarea type="text" name="content" required
+                    class="outline-none p-2 border rounded h-200px resize-none" placeholder="content"
+                    aria-label="content"> </textarea>
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Thumbnail <span class="danger">*</span></span>
+                <input type="file" name="thumbnail" required class="outline-none p-2 border rounded" aria-label="Email">
+            </div>
+
+            <% if(typeof message !=="undefined" ) {%>
+                <span class="success">
+                    <%= message %>
+                </span>
+                <%}%>
+
+                    <button class="p-2 rounded bg-success text-white w-full" type="submit">Create</button>
+        </div>
+
+    </form>
+
+
+
+    <%- include("../layout/admin-footer.ejs") %>

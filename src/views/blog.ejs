@@ -1,0 +1,44 @@
+<%- include("./layout/header.ejs") %>
+
+    <main class="container gap-3 grid grid-cols-3">
+        <% if(posts.length> 0) {
+
+            for(let i = 0; i < posts.length; i++) {%>
+                <article class="w-full p-3 border rounded">
+                    <div>
+                        <img class="w-full" src="/uploads/tambnails/<%= posts[i].thumbnail%>" alt="">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center">
+                            <h2 class="p-1">
+                                <%=posts[i].title%>
+                            </h2>
+                            <div class="flex gap-3 items-center">
+                                <span class=" flex items-center text-xl gap-1"><i
+                                        class='bx bxs-like cursor-pointer'></i>
+                                    <%= posts[i].views%>
+                                </span>
+                                <span class="flex items-center text-xl gap-1"><i
+                                        class='bx bxs-dislike cursor-pointer'></i>
+
+                                </span>
+                                <span class="flex items-center text-xl gap-1"><i class='bx bx-show  cursor-pointer'></i>
+                                    <%= posts[i].views%>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                <%= posts[i].content %>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </article>
+                <%} %>
+                    <% } else { %>
+                        <h2>Post not found</h2>
+                        <% } %>
+    </main>
+    <%- include("./layout/footer.ejs") %>

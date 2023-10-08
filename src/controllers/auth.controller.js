@@ -59,7 +59,8 @@ const login = async (req, res) => {
 
 const loadDashboard = (req, res) => {
     try {
-        res.render("admin/dashboard")
+        const path = req.pathname
+        res.render("admin/dashboard", { path })
     } catch (error) {
 
     }

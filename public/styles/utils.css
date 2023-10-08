@@ -2,6 +2,26 @@
     text-align: center;
 }
 
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.top-0 {
+    top: 0
+}
+
 /* text sizing  start*/
 .text-xl {
     font-size: 20px;
@@ -15,7 +35,18 @@
     font-size: 32px;
 }
 
+
+
+
 /* text sizing  end*/
+
+
+/* sizing  start */
+.resize-none {
+    resize: none;
+}
+
+/* sizing end */
 
 /* text color start */
 .text-red {
@@ -97,6 +128,22 @@
     height: 50%;
 }
 
+.h-20 {
+    height: 20%;
+}
+
+.h-10 {
+    height: 10%;
+}
+
+.h-100px {
+    height: 100px;
+}
+
+.h-200px {
+    height: 200px;
+}
+
 /* height end */
 /* width start  */
 
@@ -109,7 +156,13 @@
     width: 50%;
 }
 
+.w-80 {
+    width: 80%;
+}
+
 /* width end  */
+
+
 
 
 /* flex  start*/
@@ -148,16 +201,16 @@
     display: grid;
 }
 
-.grid-col-4 {
-    grid-template-columns: repeat(4fr);
+.grid-cols-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.grid-col-3 {
-    grid-template-columns: repeat(3fr);
+.grid-cols-3 {
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.grid-col-2 {
-    grid-template-columns: repeat(2fr);
+.grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
 }
 
 .gap-1 {
