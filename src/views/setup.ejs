@@ -1,16 +1,34 @@
 <%- include("./layout/header.ejs") %>
 
-    <form action="" method="post" enctype="multipart/form-data">
-        <div>
-            <input type="text" placeholder="Enter your name">
+    <form class="container flex justify-center items-center h-full" action="" method="post"
+        enctype="multipart/form-data">
+        <div class="w-50 mx-auto flex gap-3 flex-col border p-4 rounded">
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Site Title <span class="danger">*</span></span>
+                <input type="text" required class="outline-none p-2 border rounded" placeholder="Title"
+                    aria-label="Username">
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Site description <span class="danger">*</span></span>
+                <input type="text" required class="outline-none p-2 border rounded" placeholder="description"
+                    aria-label="description">
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Admin Email <span class="danger">*</span></span>
+                <input type="text" required class="outline-none p-2 border rounded" placeholder="Email"
+                    aria-label="Email">
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Admin Password <span class="danger">*</span></span>
+                <input type="text" required class="outline-none p-2 border rounded" placeholder="Password"
+                    aria-label="Password">
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="text-xl font-bold">Site Logo <span class="danger">*</span></span>
+                <input type="file" required class="outline-none p-2 border rounded">
+            </div>
+            <button class="p-2 rounded bg-success text-white w-full" type="submit">Setup</button>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+
     </form>
     <%- include("./layout/footer.ejs") %>
