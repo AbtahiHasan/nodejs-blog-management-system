@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    emai: {
+    email: {
         type: String,
         required: true
     },
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    isAdmin: {
+    is_admin: {
         type: Number,
         default: 0
     },
