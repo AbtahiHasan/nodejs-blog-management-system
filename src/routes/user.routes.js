@@ -18,6 +18,8 @@ user.get("/login", isLogout, authController.loadLogin)
 user.post("/login", authController.login)
 user.get("/profile", userIsLoginedIn, authController.loadLogin)
 user.get("/logout", isLogedIn, authController.logout)
+user.get("/forget-password", isLogout, authController.loadForgetPasswordPage)
+user.post("/forget-password", isLogout, authController.forgetPassword)
 
 
 

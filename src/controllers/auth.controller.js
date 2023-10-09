@@ -1,6 +1,8 @@
 const bcrypt = require("bcrypt")
+const crypto = require("crypto")
 const User = require("../models/user.model")
 const config = require("../config")
+const sendMail = require("../helper/sendMail")
 
 const loadLogin = (req, res) => {
     try {
@@ -57,6 +59,36 @@ const login = async (req, res) => {
     }
 }
 
+const loadForgetPasswordPage = (req, res) => {
+    try {
+        res.render("forget-password")
+    } catch (error) {
+
+    }
+}
+
+const forgetPassword = async (req, res) => {
+    try {
+        const email = req.body?.email
+        const userData = await User.findOne({ email })
+        if (userData) {
+            const token = crypto.randomBytes(64).toString("hex")
+            await User.updateOne({ email }, {
+                $set: {
+                    token
+                }
+            })
+            sendMail(userData.email, userData.name, token)
+            res.render("forget-password", { message: "please check your email" })
+        }
+        else {
+            res.render("forget-password", { message: "user not found" })
+        }
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
 const loadDashboard = (req, res) => {
     try {
         const path = req.pathname
@@ -79,6 +111,8 @@ const logout = (req, res) => {
 module.exports = {
     loadLogin,
     login,
+    loadForgetPasswordPage,
+    forgetPassword,
     loadDashboard,
     logout
 }
